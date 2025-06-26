@@ -1,0 +1,154 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Cairo', sans-serif;
+  background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+  text-align: center;
+  padding: 40px 15px;
+  direction: rtl;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.screen {
+  display: none;
+  width: 100%;
+  max-width: 500px;
+}
+
+.screen:not(.hidden) {
+  display: block;
+  animation: fadeIn 0.5s ease;
+}
+
+.hidden {
+  display: none;
+}
+
+#welcome-screen input {
+  padding: 12px;
+  margin: 10px;
+  border: none;
+  border-radius: 10px;
+  font-size: 18px;
+  width: 80%;
+  max-width: 300px;
+}
+
+#welcome-screen button {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  font-size: 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#welcome-screen button:hover {
+  background-color: #218838;
+}
+
+.game-container {
+  background: #ffffffdd;
+  padding: 30px;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 500px;
+  margin: auto;
+  box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+input[type="text"] {
+  padding: 10px;
+  width: 80%;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 2px solid #ccc;
+  margin: 10px 0;
+}
+
+button {
+  padding: 10px 30px;
+  font-size: 16px;
+  border-radius: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+#result {
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  opacity: 0;
+  transform: scale(0.9);
+  transition: 0.3s;
+}
+
+#result.show {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.correct {
+  color: green;
+}
+
+.wrong {
+  color: red;
+}
+
+.profile-bar {
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+footer {
+  margin-top: 40px;
+  color: white;
+  font-size: 14px;
+  line-height: 1.6;
+  text-align: center;
+  width: 100%;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .game-container {
+    padding: 20px;
+    border-radius: 15px;
+  }
+
+  button, input[type="text"] {
+    width: 100%;
+  }
+
+  #welcome-screen input {
+    width: 90%;
+  }
+
+  #welcome-screen button {
+    width: 90%;
+  }
+}

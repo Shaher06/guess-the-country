@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>لعبة تخمين الدولة</title>
+  <link rel="stylesheet" href="./play.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- صفحة البداية -->
+  <div id="welcome-screen" class="screen">
+    <h1>🌍 مرحبًا بك في لعبة تخمين الدولة!</h1>
+    <p class="subtitle">اختبر معلوماتك الجغرافية بطريقة ممتعة!</p>
+    <input type="text" id="playerName" placeholder="ادخل اسمك">
+    <input type="number" id="playerAge" placeholder="ادخل عمرك">
+    <button onclick="startGame()">🎮 ابدأ اللعب</button>
+  </div>
+
+  <!-- صفحة اللعبة -->
+  <div id="game-screen" class="screen hidden">
+    <div class="profile-bar">
+      👤 <span id="profileName"></span> | 🎂 <span id="profileAge"></span> سنة | 🧠 <span id="scoreBox">النقاط: 0</span>
+    </div>
+    <div class="game-container">
+      <h2>🚩 خمن الدولة!</h2>
+      <p id="hint">عاصمتها باريس</p>
+      <input type="text" id="userGuess" placeholder="اكتب اسم الدولة...">
+      <button onclick="checkAnswer()">تحقق</button>
+      <p id="result"></p>
+    </div>
+  </div>
+
+  <!-- الفوتر -->
+  <footer>
+    <p>💖 تم برمجة هذه اللعبة بحب لتجعلك تستمتع وتتعلم 🇪🇬</p>
+    <p>تابعنا للمزيد من الألعاب التعليمية والممتعة!</p>
+  </footer>
+
+  <!-- الأصوات -->
+  <audio id="correctSound" src="https://cdn.pixabay.com/download/audio/2021/08/08/audio_d3fa3566b6.mp3"></audio>
+  <audio id="wrongSound" src="https://cdn.pixabay.com/download/audio/2021/09/07/audio_7388efdc69.mp3"></audio>
+
+  <script src="./play.js"></script>
+</body>
+</html>
